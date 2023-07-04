@@ -1,0 +1,69 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rectangle{
+            padding: 10px 10px;
+             width:102px;
+            height:100px;
+            margin: 10px 20px;
+            border-radius: 2px;
+            border-color: red;
+            background-color: black;
+            
+        }
+        .circle{
+            padding: 10px 10px;
+             width:102px;
+            height:100px;
+            margin: 10px 20px;
+            border-radius: 95px;
+            border-color: red;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class= "rectangle" id="rect">
+         
+    </div>
+    <button id="display" onclick="circle()">click</button>
+    <script>
+        function circle(){
+           document.getElementById("rect").style.borderRadius="95px";
+          
+
+            
+        }
+    </script>
+</body>
+</html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul >
+        <li id="parent">parent</li>
+    </ul>
+
+<div id="child"></div>
+<script>
+    var parent=document.getElementById("parent");
+    parent.addEventListener("click",function(event){
+        var target=event.target;
+        if(target.tagName== LI){
+            var child1=document.createElement("ul")
+               child1.append()
+        }
+          
+    })
+</script>
+</body>
+</html>

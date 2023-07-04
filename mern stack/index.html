@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>src="./day3.js"</script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 7px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    
+    <table >
+        <tbody id="tableBody"></tbody>
+    </table>
+    <p id="new" ></p>
+    <button  id="display"onclick="fetchData()">click</button>
+    
+    <script>
+       async function fetchData(){
+    try{
+        var response=await fetch('https://jsonplaceholder.typicode.com/todos/1')
+        var json =await response.json()
+        
+        var tableBody = document.getElementById("tableBody");
+                
+                // Clear previous table data
+                tableBody.innerHTML = "";
+                
+                // Create a new row and cells for each key-value pair in the JSON object
+                Object.keys(json).forEach(function(key) {
+                    var row = tableBody.insertRow();
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    cell1.innerHTML = key;
+                    cell2.innerHTML = json[key];
+                });
+
+    }catch(err){
+        console.error(err)
+    }
+}
+//fetchData().then(res =>console.log(res))
+
+    </script>
+</body>
+</html>
